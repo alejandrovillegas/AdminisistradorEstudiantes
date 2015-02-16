@@ -6,6 +6,6 @@
 <title>Student Administrator</title>
 </head>
 <body>
-<jsp:forward page="/UserController?action=listUser" />
+<jsp:forward page="/UserController?action=listUser" />//Llama al controlador para generar listas
 </body>
 </html>
