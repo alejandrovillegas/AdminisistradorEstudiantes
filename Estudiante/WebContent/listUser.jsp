@@ -35,6 +35,6 @@
 		</c:forEach>
 	</tbody>
 	</table>
-	<p><a href="UserController?action=insert">Add Estudiadnte</a></p>
+	<p><a href="UserController?action=insert">Agregar Nuevo Estudiante</a></p>
 </body>
 </html>
