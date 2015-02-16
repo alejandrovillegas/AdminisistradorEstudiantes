@@ -1,0 +1,5 @@
+package com.estudiante.controller;
+
+public class UserController {
+
+}

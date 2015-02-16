@@ -1,0 +1,109 @@
+package com.estudiante.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import com.estudiante.model.user;
+import com.estudiante.util.DbUtil;
+
+public class UserDao {
+
+private Connection connection;
+	public UserDao() {
+		connection = DbUtil.getConnection();
+	}
+	public void addUser(user user) {
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("insert into Estudiantes(id,nombre,n1,n2,n3,n4) values (?, ?, ?, ?, ?, ? )");
+			// Parameters start with 1
+			preparedStatement.setInt(1, user.getid());
+			preparedStatement.setString(2, user.getNombre());
+			preparedStatement.setInt(3, user.getn1());
+			preparedStatement.setInt(4, user.getn2());
+			preparedStatement.setInt(5, user.getn3());
+			preparedStatement.setInt(6, user.getn4());
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+		
+	public void deleteUser(int id) {
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("delete from Estudiantes where id=?");
+			// Parameters start with 1
+			preparedStatement.setInt(1, id);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void updateUser(user user) {
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("update Estudiantes set nombre=?, n1=?, n2=?, n3=?, n4=?" +
+								"where id=?");
+			// Parameters start with 1
+			
+			preparedStatement.setString(1, user.getNombre());
+			preparedStatement.setInt(2, user.getn1());
+			preparedStatement.setInt(3, user.getn2());
+			preparedStatement.setInt(4, user.getn3());
+			preparedStatement.setInt(5, user.getn4());
+			preparedStatement.setInt(6, user.getid());
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public List<user> getAllUsers() {
+		List<user> users = new ArrayList<user>();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("select * from Estudiantes");
+			while (rs.next()) {
+				user user = new user();
+				user.setid(rs.getInt("id"));
+				user.setNombre(rs.getString("nombre"));
+				user.setn1(rs.getInt("n1"));
+				user.setn2(rs.getInt("n2"));
+				user.setn3(rs.getInt("n3"));
+				user.setn4(rs.getInt("n4"));
+
+				users.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return users;
+	}
+	
+	public user getUserById(int userId) {
+		user user = new user();
+		try {
+			PreparedStatement preparedStatement = connection.
+					prepareStatement("select * from Estudiantes where id=?");
+			preparedStatement.setInt(1, userId);
+			ResultSet rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+				user.setid(rs.getInt("id"));
+				user.setNombre(rs.getString("nombre"));
+				user.setn1(rs.getInt("n1"));
+				user.setn2(rs.getInt("n2"));
+				user.setn3(rs.getInt("n3"));
+				user.setn4(rs.getInt("n4"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
+}

@@ -1,0 +1,16 @@
+127.0.0.1 - - [11/Feb/2015:22:30:35 -0500] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Feb/2015:22:30:52 -0500] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Feb/2015:22:30:52 -0500] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [11/Feb/2015:22:30:52 -0500] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [11/Feb/2015:22:31:22 -0500] "GET /Estudiante HTTP/1.1" 302 -
+127.0.0.1 - - [11/Feb/2015:22:31:23 -0500] "GET /Estudiante/ HTTP/1.1" 500 3878
+127.0.0.1 - - [11/Feb/2015:22:33:56 -0500] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Feb/2015:22:34:05 -0500] "GET /Estudiante/ HTTP/1.1" 500 3876
+127.0.0.1 - - [11/Feb/2015:22:42:39 -0500] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Feb/2015:22:42:45 -0500] "GET /Estudiante/ HTTP/1.1" 200 522
+127.0.0.1 - - [11/Feb/2015:22:45:47 -0500] "GET /Estudiante/UserController?action=insert HTTP/1.1" 200 1206
+127.0.0.1 - - [11/Feb/2015:22:45:47 -0500] "GET /Estudiante/css/ui-lightness/jquery-ui-1.8.18.custom.css HTTP/1.1" 404 1104
+127.0.0.1 - - [11/Feb/2015:22:45:47 -0500] "GET /Estudiante/js/jquery-ui-1.8.18.custom.min.js HTTP/1.1" 404 1082
+127.0.0.1 - - [11/Feb/2015:22:45:47 -0500] "GET /Estudiante/js/jquery-1.7.1.min.js HTTP/1.1" 404 1060
+127.0.0.1 - - [11/Feb/2015:22:45:47 -0500] "GET /Estudiante/js/jquery-ui-1.8.18.custom.min.js HTTP/1.1" 404 1082
+127.0.0.1 - - [11/Feb/2015:22:46:54 -0500] "POST /Estudiante/UserController HTTP/1.1" 500 1541
