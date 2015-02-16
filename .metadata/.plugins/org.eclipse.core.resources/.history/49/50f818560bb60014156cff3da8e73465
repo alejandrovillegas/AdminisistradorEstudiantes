@@ -54,7 +54,8 @@ public class UserController extends HttpServlet {
 		 	user.setn2(Double.parseDouble(request.getParameter("n2")));
 		 	user.setn3(Double.parseDouble(request.getParameter("n3")));
 		 	user.setn4(Double.parseDouble(request.getParameter("n4")));
-		  	String id = request.getParameter("id");
+		 	//faltan los otros datos, problemas de parseo
+		 	String id = request.getParameter("id");
 		 if(id == null || id.isEmpty())
 		 {
 		 		dao.addUser(user);
